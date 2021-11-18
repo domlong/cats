@@ -25,19 +25,16 @@ function searchTerm() {
 
 const randomCat = document.querySelector('.random-cat');
 const searchBar = document.querySelector('input');
-
 const search = document.querySelector('.search');
 randomCat.addEventListener("click", searchCat);
 search.addEventListener("click", searchTerm);
 
 // Perform search function on pressing Enter key within input field
 searchBar.addEventListener("keydown", function(event) {
-    event.preventDefault();
     if (event.key === "Enter") {
         search.click();
     }
 });
 
-console.log(searchBar);
-
+// Show cat on page load
 searchCat();
