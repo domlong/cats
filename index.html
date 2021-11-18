@@ -2,34 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Cats</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <style>
-        body {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-image: url('cat.png');
-            background-size: 10%;
-            background-repeat: space;
-            /* background-repeat: round; */
-        }    
-    </style>
-    <img src="#" alt="cat">
-    <script>
-        const img = document.querySelector('img');
-        fetch('https://api.giphy.com/v1/gifs/translate?api_key=9nB4AH7jn7x420ixM1MeKVwCupvsTm6k&s=cats', {mode: 'cors'})
-            .then(function(response) {
-                return response.json();
-            })
-            .then(function(response) {
-                img.src = response.data.images.original.url;
-            })
-            .catch(e => {
-                console.log(e)
-            })
-    </script>
+    <div class="container">
+        <main>
+            <img src="#" alt="cat">
+            <div class="form">
+                <input type="text" class="search-bar" placeholder="cats">
+                <button class="search">Search</button>
+                <button class="random-cat">I'm feeling catty</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
