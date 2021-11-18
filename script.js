@@ -8,9 +8,10 @@ function fetchGif(keyword) {
     })
     .then(function(response) {
         img.src = response.data.images.original.url;
+        img.alt = keyword;
     })
     .catch(e => {
-        console.log(e)
+        img.alt = "Can't find a gif matching your search terms :C"
     })
 }
 
