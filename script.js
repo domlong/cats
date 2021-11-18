@@ -1,18 +1,15 @@
 const img = document.querySelector('img');
 
-function fetchGif(keyword) {
-    img.src = '#'
-    fetch(`https://api.giphy.com/v1/gifs/translate?api_key=9nB4AH7jn7x420ixM1MeKVwCupvsTm6k&s=${keyword}`, {mode: 'cors'})
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(response) {
-        img.src = response.data.images.original.url;
+async function fetchGif(keyword) {
+    try {
+        const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=9nB4AH7jn7x420ixM1MeKVwCupvsTm6k&s=${keyword}`, {mode: 'cors'});
+        const gifData = await response.json();
+        img.src = gifData.data.images.original.url;
+    } catch (error) {
+        console.log(error);
         img.alt = keyword;
-    })
-    .catch(e => {
-        img.alt = "Can't find a gif matching your search terms :C"
-    })
+        img.alt = "Can't find a gif matching your search terms :C";
+    }
 }
 
 function searchCat() {
