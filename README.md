@@ -1,5 +1,5 @@
 # cats
 
-[Preview link](https://domlong.github.io/cats/)
+[View live preview](https://domlong.github.io/cats/)
 
-Messing around with API calls
+Search gifs using Giphy API
